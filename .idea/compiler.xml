@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mall-shared" />
+        <module name="mall-order" />
+        <module name="mall-mock" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mall-account" target="8" />
+      <module name="mall-basket" target="8" />
+      <module name="mall-product" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mall-account" options="" />
+      <module name="mall-basket" options="" />
+      <module name="mall-mock" options="" />
+      <module name="mall-order" options="" />
+      <module name="mall-product" options="" />
+      <module name="mall-shared" options="" />
+    </option>
+  </component>
+</project>

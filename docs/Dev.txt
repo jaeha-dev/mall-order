@@ -1,0 +1,86 @@
++----------------------------------------------------------------------------------------------------------------------+
+# mall-shared
+1) 서비스: 공통 모듈
+
+# mall-mock
+1) 서비스: 장바구니(Cart)
+2) 프로젝트명: mall-mock
+3) 포트: 8000
+4) Swagger-UI: http://localhost:8000/swagger-ui.html
+5) 목적: API 호출을 위한 Mock 리소스 서버
+
+# mall-order
+1) 서비스: 주문(Purchase)
+2) 프로젝트명: mall-order
+3) 포트: 8001
+4) H2 DB: jdbc:h2:mem:order
+5) H2 콘솔: http://localhost:8001/h2-console
+6) Swagger-UI: http://localhost:8001/swagger-ui.html
++----------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+# 인텔리제이 멀티 프로젝트 만들기
+- Empty Project 생성 -> Add Framework (Maven) -> Project Structure 설정 -> Modules -> Add New Module
+
+# Rest API 설계
+- https://brunch.co.kr/@springboot/59
+- https://docs.microsoft.com/ko-kr/azure/architecture/best-practices/api-design#organize-the-api-around-resources
+
+# Query Param vs. Path Param
+- 엔드 포인트에서 필터링 등이 요구될 경우 Query Param
+- https://stackoverflow.com/questions/30967822/when-do-i-use-path-params-vs-query-params-in-a-restful-api
+- https://rhammer.tistory.com/224
+
+# @ElementCollection, @CollectionTable
+- https://stackoverflow.com/questions/46425395/does-elementcollection-imply-orphanremoval
+- https://github.com/Integerous/orm-jpa-basic/blob/master/summarize.md
+
+# @Embeddable, @Embedded
+- https://galid1.tistory.com/592
+
+# H2 DB 예약어
+- https://www.popit.kr/가짜뉴스아웃-하이버네이트-데이터베이스-스키마
+- (ORDER, GROUP, SELECT, WHERE 등은 예약어이므로 Entity 이름으로 사용할 수 없음)
+
+# JPA & Querydsl
+- https://adrenal.tistory.com/23
+- https://adrenal.tistory.com/25
+- https://github.com/adrenalinee/sample/tree/master/sample-spring-data-jpa
+- https://jogeum.net/9 (JpaRepository, !Query)
+
+# QueryDslRepositorySupport
+- Update, Delete 방식을 지원한다.
+- https://netframework.tistory.com/entry/13-queryDSL-Spring-Data-JPA
+- https://jojoldu.tistory.com/372 (설정 방법 있음)
+- https://www.baeldung.com/intro-to-querydsl (Update 예제 있음)
+- https://ryan-han.com/post/jpa/jpa_basics (Querydsl 은 동적 쿼리가 중요)
+- https://joont92.github.io/jpa/QueryDSL (Projections?)
+- https://victorydntmd.tistory.com/206
+
+# @Embeddable, @Embedded + Collection
+- @Embedded + Collection
+- https://en.wikibooks.org/wiki/Java_Persistence/ElementCollection
+- https://stackoverflow.com/questions/49025041/map-the-entity-with-embedded-list-from-one-view
+- https://stackoverflow.com/questions/9318387/mapping-single-table-to-embeddable-collection-in-jpa
+- https://www.logicbig.com/tutorials/java-ee-tutorial/jpa/embedded-element-collection.html
+
+# @Embeddable / VO
+- @Embeddable 속성을 지정한 클래스는 VO 이다.
+- https://dev-troh.tistory.com/165
+
+# HATEOAS
+- https://ict-nroo.tistory.com/103
+- https://otrodevym.tistory.com/entry/Spring-HATEOAS-특징과-설정-정리
+- https://www.baeldung.com/spring-hateoas-tutorial
+- https://github.com/TheOpenCloudEngine/uEngine-cloud/wiki/Spring-HATEOAS-API (_embedded 는 컬렉션 의미)
+- https://github.com/yoojh9/springboot-restapi-hateoas
+
+- JSON 응답
+- @RequestMapping(produces = MediaTypes.HAL_JSON_UTF8_VALUE)
+- https://www.inflearn.com/questions/6391
+
+# JPA + @Data 사용 주의
+- 부모 + 자식 객체 관계 시, 부모 객체의 toString() 메소드를 호출할 때 자식 객체의 toString() 메소드를 호출하는 무한 반복
+- https://velog.io/@jayjay28/자주-사용하는-Lombok-어노테이션
++----------------------------------------------------------------------------------------------------------------------+

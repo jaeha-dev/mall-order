@@ -1,0 +1,31 @@
++----------------------------------------------------------------------------------------------------------------------+
+1) Swagger - java.lang.NumberFormatException: For input string: ""
+>> /swagger-ui.html 접속 시, 발생하는 문제
+>> @ApiParam(value = "test", required = true, example = "1") @PathVariable("id") Long id
+(example = "1" 와 같이 Long 값 필드에 대한 예시를 제공해야 한다.)
+>> https://github.com/springfox/springfox/issues/2528
+
+2) HATEOAS(Resource) 사용 시, 특정 ID 값이 null
+>> https://stackoverflow.com/questions/24839760/spring-boot-responsebody-doesnt-serialize-entity-id
+>> HATEOAS 사용 없이 할 경우, null 이 발생하지 않는 것으로 보아 라이브러리 자체의 규칙인 듯 하다.
+
+3) QueryDslPredicateExecutor 클래스를 찾지 못하는 문제
+>> https://stackoverflow.com/questions/49044080/querydslpredicateexecutor-not-found-in-spring-data-commons-2-0-4
+>> 2.x 버전부터 클래스명이 변경되었다. (1.x: QueryDslPredicateExecutor -> 2.x: QuerydslPredicateExecutor)
+
+4) JPA Save 메소드 사용 시, 값이 저장되지 않는 문제
+>> 읽기 전용 트랜잭션을 지정했기 때문 (@Transactional(readOnly = true) 에서 읽기 전용 속성을 삭제한다.)
+
+5) @Embeddable 속성을 지정한 클래스 2개 이상을 @Embedded 하였을 때, 컬럼 이름이 중복되는 문제
+>> @AttributeOverrides 또는 @AttributeOverride 을 사용하여 매핑을 재설정할 수 있다.
+>> https://dev-troh.tistory.com/165
+
+6) Update / Delete 실행 시, javax.persistence.TransactionRequiredException: Executing an update/delete query 문제
+>> 해당 서비스 클래스의 메소드에 @Transactional 속성을 지정한다.
+
+7) 부모 Entity 에 Delete 를 실행했을 때, 자식 Entity 에서 참조 무결성 문제
+>> @JoinColumn(name = "MOTHER_ID",
+               foreignKey = @ForeignKey(foreignKeyDefinition = "FOREIGN KEY(MOTHER_ID) REFERENCES MOTHER(ID) ON DELETE CASCADE", value = ConstraintMode.CONSTRAINT))
+>> 을 적절히 수정하여 사용한다.
+>> https://stackoverflow.com/questions/7825484/jpa-delete-where-does-not-delete-children-and-throws-an-exception
++----------------------------------------------------------------------------------------------------------------------+
