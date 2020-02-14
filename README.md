@@ -24,7 +24,7 @@ Swagger: http://localhost:8000/swagger-ui.html
 > OUT : 장바구니 상세 (Cart)
 
 ### mall-order
-DB Console: http://localhost:8001/h2-console
+DB Console: http://localhost:8001/h2-console  
 Swagger: http://localhost:8001/swagger-ui.html
 
 1. 주문 목록 조회 (/v1/orders/search/emails=account@test.com)
