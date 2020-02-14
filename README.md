@@ -11,7 +11,7 @@
 * mall-order: 주문 서비스 (구매자 관점에서 주문 처리를 수행하는 REST API)  
 
 ### mall-mock (cart)
-***
+**
    Swagger: http://localhost:8000/swagger-ui.html
 
 1-1. 장바구니 상세 조회 (/v1/carts/search/emails?email=account@test.com)
@@ -33,7 +33,7 @@
 > OUT : 장바구니 상세 (Cart)
 
 ### mall-order
-***
+**
    DB Console: http://localhost:8001/h2-console
    Swagger: http://localhost:8001/swagger-ui.html
 
