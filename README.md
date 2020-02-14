@@ -1,7 +1,14 @@
-# 프로젝트 구성 (멀티 프로젝트 구성)
-1) mall-shared: 공통 모듈로 VO, Entity 등 마킹을 위한 인터페이스
-2) mall-mock: 주문 서비스에 장바구니 데이터를 주기 위한 임시 REST API
-3) mall-order: 주문 서비스로 구매자 관점에서 주문 처리를 수행하는 REST API
+### 19-2학기 팀 프로젝트 - 쇼핑몰(주문 서비스) REST API 개발
+***
+    개발 환경: Windows 10 64 bit, IntelliJ IDEA
+    활용 기술: Spring Framework(Boot), Swagger, ORM
+    
+
+* mall-shared: 공통 모듈 (VO, Entity 등 마킹을 위한 인터페이스)  
+
+* mall-mock: 장바구니 서비스 (주문 서비스에 장바구니 데이터를 주기 위한 임시 REST API  
+
+* mall-order: 주문 서비스 (구매자 관점에서 주문 처리를 수행하는 REST API)  
 
 
 # mall-mock (cart)
